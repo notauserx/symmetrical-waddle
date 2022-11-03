@@ -2,9 +2,9 @@
 
 namespace Data;
 
-public class CarRentalContext : DbContext
+public class CarRentalsContext : DbContext
 {
-    public CarRentalContext(DbContextOptions options)
+    public CarRentalsContext(DbContextOptions options)
         : base(options)
     {
 
