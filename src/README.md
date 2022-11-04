@@ -5,8 +5,12 @@ A sample project where I develop a car rental application.
 
 # Running the api
 
-- In docker profile - change the connectionString to carrentalsdb
-- (https://localhost:7008/swagger/index.html)
+- In docker profile 
+	- change the connectionString to carrentalsdb
+	- The network argument is specified in dockerfileRunArguments field in the launchSettings file.
+	- Run docker network inspect carrentals-net to verify the api and db are in the carrentals-net network.
+	- If not, Run docker network connect carrentals-net CarRentals.Api to add the container to the network
+
 
 # Setup up the development environment
 
@@ -16,8 +20,6 @@ A sample project where I develop a car rental application.
 
 ```shell
 docker network create --driver bridge carrentals-net
-docker network connect carrentals-net CarRentals.Api
-docker network inspect carrentals-net
 ```
 
 ### Running the mssql server
