@@ -1,6 +1,5 @@
 ﻿using Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CarRentals.Api.Controllers
 {
