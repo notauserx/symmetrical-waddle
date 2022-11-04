@@ -5,6 +5,7 @@ A sample project where I develop a car rental application.
 
 # Running the api
 
+- For fist time users set up the docker desktop and create a docker network named carrentals-net
 - In docker profile 
 	- change the connectionString to carrentalsdb
 	- The network argument is specified in dockerfileRunArguments field in the launchSettings file.
