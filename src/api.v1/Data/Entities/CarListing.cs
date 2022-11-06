@@ -16,6 +16,8 @@ public class CarListing
     [Required]
     public int Year { get; set; }
 
+    public Guid? UserId { get; set; }
+
     public User? User { get; set; }
 
     // TDOD :: make rate as a separate entity

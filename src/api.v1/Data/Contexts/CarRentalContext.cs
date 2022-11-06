@@ -12,9 +12,10 @@ public class CarRentalsContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>()
-            .HasMany(u => u.Listings)
-            .WithOne();
+        modelBuilder.Entity<CarListing>()
+            .HasOne(e => e.User)
+            .WithMany(e => e.Listings)
+            .HasForeignKey(u => u.UserId);
 
         modelBuilder.Entity<User>()
             .HasIndex(u => u.Email)
