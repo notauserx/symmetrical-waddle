@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Data\Context.Migrations\Context.Migrations.csproj" />
-    <ProjectReference Include="..\..\Data\Contexts\Contexts.csproj" />
+    <ProjectReference Include="..\Contexts\Contexts.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
 
 </Project>
