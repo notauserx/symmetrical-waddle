@@ -7,7 +7,7 @@ A sample project where I develop a car rental application.
 
 - For fist time users set up the docker desktop and create a docker network named carrentals-net
 - In docker profile 
-	- change the connectionString to carrentalsdb
+	- change the data source to carrentalsdb in the connection string
 	- The network argument is specified in dockerfileRunArguments field in the launchSettings file.
 	- Run docker network inspect carrentals-net to verify the api and db are in the carrentals-net network.
 	- If not, Run docker network connect carrentals-net CarRentals.Api to add the container to the network
@@ -42,14 +42,20 @@ this will bring up the sqlcmd utility. To learn more about how to use this utili
 
 # Migrations
 
-- Migrations are set up in a seperate folder, when adding migrations use the --project option to specify the project.
+- Migrations are set up in a seperate folder, when adding migrations use the --project option to specify the path to the project.
 
 ```shell
-dotnet ef migrations add <migration-name> --project ..\..\Data\Context.Migrations
+dotnet ef migrations add <migration-name> --project ../Context.Migrations
+```
+
+Before running database update change the connectionString to make Data Source=localhost,1445;
+
+```JSON
+"CarRentalsDbConnectionString": "Initial Catalog=CarRentalsDB; Data Source=localhost,1445; Persist Security Info=True;User ID=SA;Password=2Secure*Password2",
 ```
 
 ```shell
-dotnet ef database update
+dotnet ef database update 
 ```
 
 Refer to [this guide](https://learn.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli) for managing ef core migrations.
