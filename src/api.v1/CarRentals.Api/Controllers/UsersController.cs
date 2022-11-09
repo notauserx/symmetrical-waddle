@@ -1,4 +1,5 @@
 ﻿using Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarRentals.Api.Controllers
@@ -18,6 +19,12 @@ namespace CarRentals.Api.Controllers
         public IActionResult GetUsers()
         {
             return Ok(carRentalsContext.Users.ToList());
+        }
+
+        [HttpGet("/useruser"), Authorize]
+        public IActionResult GetUsers(int size)
+        {
+            return Ok(carRentalsContext.Users.Take(size).ToList());
         }
     }
 }
