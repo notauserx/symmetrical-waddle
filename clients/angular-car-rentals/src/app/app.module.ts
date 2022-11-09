@@ -9,6 +9,7 @@ import { TopnavComponent } from './layout/topnav/topnav.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { UserMenuComponent } from './layout/user-menu/user-menu.component';
 import { UserLoginComponent } from './core/authentication/user-login/user-login.component';
+import { UserRegistrationComponent } from './core/authentication/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserLoginComponent } from './core/authentication/user-login/user-login.
     TopnavComponent,
     SidebarComponent,
     UserMenuComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,
