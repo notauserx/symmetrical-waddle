@@ -8,6 +8,6 @@ public record LoginResponse
 
     public string? ErrorMessage { get; set; }
 
-    public static LoginResponse CreateWithToken(string token) => 
+    public static LoginResponse CreateWithToken(string token) =>
         new() { IsSuccess = true, Token = token };
 }
