@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserLoginRequest } from 'src/app/interfaces/UserLoginRequest';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
+import { UserLoginResponse } from 'src/app/interfaces/UserLoginResponse';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-user-login',
@@ -16,11 +20,16 @@ export class UserLoginComponent implements OnInit {
   errorMessage: string = '';
   showError!: boolean;
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(
+    private authService: AuthenticationService, 
+    private router: Router, 
+    private route: ActivatedRoute) 
+  
+  { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      username: new FormControl<string>("",[Validators.required]),
+      email: new FormControl<string>("",[Validators.required]),
       password: new FormControl<string>("", [Validators.required])
     });
 
@@ -35,17 +44,30 @@ export class UserLoginComponent implements OnInit {
     return this.loginForm.get(controlName)?.hasError(errorName)
   }
 
-  loginUser = (loginFormValue: LoginRequest) => {
-    console.log("hello");
+  loginUser = (loginFormValue: UserLoginRequest) => {
     this.showError = false;
     const login = { ... loginFormValue};
 
-    console.log(login);
+    const userLoginRequest: UserLoginRequest = {
+      email: login.email,
+      password: login.password
+    }
+
+    console.log(userLoginRequest);
+
+    this.authService.loginUser('api/auth/login', userLoginRequest)
+    .subscribe({
+      next: (response: UserLoginResponse) => {
+        console.log(response);
+        localStorage.setItem("token", response.token);
+        this.authService.sendAuthStateChangeNotification(response.isSuccess);
+      },
+      error: (err: HttpErrorResponse) => {
+        this.errorMessage = err.message;
+        this.showError = true;
+      }
+    });    
+
   }
-
 }
 
-interface LoginRequest {
-  username: string;
-  password: string;
-}

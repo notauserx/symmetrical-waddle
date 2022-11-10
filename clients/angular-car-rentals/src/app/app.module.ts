@@ -10,6 +10,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { UserMenuComponent } from './layout/user-menu/user-menu.component';
 import { UserLoginComponent } from './core/authentication/user-login/user-login.component';
 import { UserRegistrationComponent } from './core/authentication/user-registration/user-registration.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserRegistrationComponent } from './core/authentication/user-registrati
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

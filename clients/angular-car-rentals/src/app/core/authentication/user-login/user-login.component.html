@@ -7,16 +7,19 @@
                 <p>Please sign in to your account.</p>
             </div>
             <div class="space-y-5">
+                
                 <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-400 tracking-wide">Username</label>
+                    <label class="text-sm font-medium text-gray-400 tracking-wide">Email</label>
                     <input
                         class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-400" 
-                        type="text" id="username" formControlName="username" 
-                        placeholder="Enter your user name"/>
+                        type="text" id="username" formControlName="email" 
+                        placeholder="Enter your email"/>
                 </div>
                 <div class="space-y-5">
-                  <em *ngIf="validateControl('username') && hasError('username', 'required')">Username is required</em>
+                  <em *ngIf="validateControl('email') && hasError('email', 'required')">email is required</em>
                 </div>
+
+
                 <div class="space-y-2">
                     <label class="mb-5 text-sm font-medium text-gray-400 tracking-wide">
                         Password
