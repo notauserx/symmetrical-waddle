@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{864B4B39-D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{595DB053-166A-4A79-9B47-208D107598CD}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -18,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "api.v1\Entities
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentals.Api", "api.v1\CarRentals.Api\CarRentals.Api.csproj", "{1083FC06-EF18-4C5B-B537-2A4726C676DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentals.Api.DTO", "CarRentals.Api.DTO\CarRentals.Api.DTO.csproj", "{D890C6D4-2BE8-4DC7-BCA2-FB47C096748E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentals.Api.DTO", "CarRentals.Api.DTO\CarRentals.Api.DTO.csproj", "{D890C6D4-2BE8-4DC7-BCA2-FB47C096748E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
