@@ -17,7 +17,11 @@ export class UserMenuComponent implements OnInit {
     this.authService.authenticationChanged
       .subscribe(res => {
         this.isUserAuthenticated = res;
-      })
+      });
+
+    if(localStorage.getItem('token') !== null){
+      this.isUserAuthenticated = true;
+    }
   }
 
   logOut(): void {
