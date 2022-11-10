@@ -1,4 +1,4 @@
-﻿namespace CarRentals.Api.DTO;
+﻿namespace CarRentals.Api.Models;
 
 public record LoginResponse
 {
