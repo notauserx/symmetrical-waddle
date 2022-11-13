@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Api.Models\Api.Models.csproj" />
+    <ProjectReference Include="..\Api.Contracts\Api.Contracts.csproj" />
     <ProjectReference Include="..\Context.Migrations\Context.Migrations.csproj" />
     <ProjectReference Include="..\Contexts\Contexts.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
